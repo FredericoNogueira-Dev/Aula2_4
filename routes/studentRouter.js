@@ -38,18 +38,6 @@ app.patch("/student/:id", async (req, res) => {
     }
 })
 
-app.put("/student/:id", async (req, res) => {
-    try {
-        const id = req.params.id;
-        const data = await studentModel.findByIdAndUpdate({ _id: id }, req.body, {
-            new: true
-        })
-        res.send(data)
-    } catch (error) {
-        res.status(500).send(error)
-    }
-})
-
 //DELETE
 app.delete("/student/:id", async (req, res) => {
     try {
